@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/06 15:37:16 by kmahdi            #+#    #+#             */
+/*   Updated: 2023/01/07 02:12:41 by kmahdi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PIPEX_H
+# define PIPEX_H
+
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <limits.h>
+# include <stdarg.h>
+# include <stdio.h>
+# include <sys/types.h>
+# include <sys/wait.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 434
+# endif
+
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putnbr(int n);
+int		ft_unsg(unsigned int n);
+int		ft_printf(const char *format, ...);
+char	**ft_split(char const *s, char c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*get_next_line(int fd);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char *s1, char *s2);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*m_strjoin(char *s1, char *s2);
+#endif
