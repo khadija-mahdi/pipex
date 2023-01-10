@@ -25,6 +25,7 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 434
 # endif
+# define TEMP_FILE_NAME ".temp_file"
 
 int		ft_putchar(char c);
 int		ft_putstr(char *s);

@@ -1,0 +1,14 @@
+total 96
+drwxr-xr-x  13 aaitouna  2019    442 Jan 11 00:50 .
+drwx------   8 aaitouna  2019    272 Jan 11 00:15 ..
+-rw-r--r--   1 aaitouna  2019   6148 Jan 11 00:15 .DS_Store
+drwxr-xr-x  12 aaitouna  2019    408 Jan 11 00:15 .git
+drwxr-xr-x   3 aaitouna  2019    102 Jan 11 00:28 .vscode
+-rw-r--r--   1 aaitouna  2019    408 Jan 11 00:15 Makefile
+-rw-r--r--   1 aaitouna  2019   2760 Jan 11 00:50 main.c
+-rw-r--r--   1 aaitouna  2019   3188 Jan 11 00:50 main.o
+-rw-r--r--   1 aaitouna  2019      0 Jan 11 00:50 ou
+-rw-r--r--   1 aaitouna  2019     25 Jan 11 00:40 out446
+-rwxr-xr-x   1 aaitouna  2019  18788 Jan 11 00:50 pipex
+-rw-r--r--   1 aaitouna  2019   1918 Jan 11 00:28 pipex.h
+drwxr-xr-x  16 aaitouna  2019    544 Jan 11 00:50 utils
