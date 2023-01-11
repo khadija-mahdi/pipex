@@ -6,53 +6,50 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:58:01 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/11 04:06:10 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/11 05:03:31 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	free_list(char **list)
+void	path(char *paths, char **full_path, char *av)
 {
-	int	i;
+	char	**my_paths;
+	char	*program;
+	int		j;
 
-	i = 0;
-	while (list[i])
-		free(list[i++]);
-	free(list);
+	j = 0;
+	if (paths)
+	{
+		my_paths = ft_split(paths + 5, ':');
+		while (my_paths[j])
+		{
+			program = m_strjoin("/", av);
+			*full_path = m_strjoin(my_paths[j++], program);
+			free(program);
+			if (access(*full_path, F_OK) == 0)
+				break ;
+			free(*full_path);
+			*full_path = NULL;
+		}
+		free_list(my_paths);
+	}
 }
 
 char	*aff_path(char *av, char **env)
 {
 	int		i;
-	int		j;
 	char	*full_path;
 	char	*paths;
-	char	**my_paths;
-	char	*program;
 
 	i = 0;
+	full_path = NULL;
 	if (access(av, F_OK) == 0)
 		return (av);
 	while (env[i])
 	{
-		j = 0;
 		paths = (ft_strnstr(env[i++], "PATH=", 5));
-		if (paths)
-		{
-			my_paths = ft_split(paths + 5, ':');
-			while (my_paths[j])
-			{
-				program = m_strjoin("/", av);
-				full_path = m_strjoin(my_paths[j++], program);
-				free(program);
-				if (access(full_path, F_OK) == 0)
-					break ;
-				free(full_path);
-				full_path = NULL;
-			}
-			free_list(my_paths);
-		}
+		path(paths, &full_path, av);
 	}
 	return (full_path);
 }
