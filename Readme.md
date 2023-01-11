@@ -19,7 +19,7 @@
 
 # pipe | :
 
-`***a pipe is a data structure that allows data to be transferred between processes. A pipe is a unidirectional data channel, meaning that data can be transferred in only one direction through the pipe` .***
+`a pipe is a data structure that allows data to be transferred between processes. A pipe is a unidirectional data channel, meaning that data can be transferred in only one direction through the pipe`.
 
 [Process : ](pipex%20f3f377eedb644f1a805c6f479d7576c0/Process%205489eb2fa3234436838be5c8933e078e.md)
 
@@ -27,7 +27,7 @@
 
 - wait()
     
-    *`The `**`wait():`**`
+    `The `**`wait():`**`
      function is typically used in conjunction with the `**`fork()`**`
      function, which is used to create child processes. It is an important part of the process management system in Unix-like operating systems.`*
     
