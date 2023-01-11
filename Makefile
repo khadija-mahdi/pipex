@@ -1,14 +1,13 @@
 NAME = pipex
 
-SRC= ./utils/ft_printf.c ./utils/ft_printf_utils.c \
-	./utils/get_next_line.c ./utils/get_next_line_utils.c \
-	./utils/ft_split.c ./utils/m_strjoin.c  ./utils/utils_libft.c main.c
+SRC= ./utils/ft_printf.c ./utils/ft_printf_utils.c  ./utils/ft_split.c \
+	./utils/utils_libft.c main.c ./utils/utils_libft_one.c
 
 OBJ= $(SRC:.c=.o)
 
 CC = cc
 
-#CFLAGS=  -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror 
 
 $(RM) = rm -f 
   

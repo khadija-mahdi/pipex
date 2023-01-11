@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:36:19 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/06 03:30:03 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/11 04:09:10 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,6 @@ char	*ft_strchr(const char *s, int c)
 	if ((char) c == '\0')
 		return (j + i);
 	return (0);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -98,4 +86,28 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ft_bzero (s, count * size);
 	return (s);
+}
+
+char	*ft_substr(char const *s, int start, int len)
+{
+	int		i;
+	char	*j;
+
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	j = malloc((len + 1) * sizeof(char));
+	if (!j)
+		return (NULL);
+	i = 0;
+	while (s[i + start] && i < len)
+	{
+		j[i] = s[start + i];
+		i++;
+	}
+	j[i] = '\0';
+	return (j);
 }

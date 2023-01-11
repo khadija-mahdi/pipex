@@ -6,13 +6,13 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 03:26:16 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/06 03:51:07 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/11 04:05:13 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, int len)
 {
 	if (*needle && len == 0)
 		return (0);
@@ -80,4 +80,14 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		i++;
 	}
 	return (dst);
+}
+
+int	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
