@@ -38,17 +38,17 @@
     `pipes can be created using the `**`pipe()`**` function, which is declared in the `**`unistd.h`**`
      header file. The `**`pipe()`**` function creates a pipe and returns a pair of file descriptors that refer to the ends of the pipe. One process writes data to the pipe using the write end of the pipe (which is represented by the first file descriptor in the pair), while the other process reads data from the pipe using the read end of the pipe (which is represented by the second file descriptor in the pair).`
     
-    `*fd[0] → write*`
+    `fd[0] → write`
     
-    `*fd[1] → read*`
+    `fd[1] → read`
     
 - dup /dup2
     
-    `**``*dup`**` is a Unix system call that creates a new file descriptor for an existing file. It allows a process to create multiple references to a single file, each with a different file descriptor.*`
+    `dup` is a Unix system call that creates a new file descriptor for an existing file. It allows a process to create multiple references to a single file, each with a different file descriptor.*`
     
-    `*The `**`dup()`**` function takes a file descriptor as an argument, and it returns a new file descriptor that refers to the same file. The new file descriptor has the lowest available file descriptor number that is greater than or equal to 0.*`
+    `The `**`dup()`**` function takes a file descriptor as an argument, and it returns a new file descriptor that refers to the same file. The new file descriptor has the lowest available file descriptor number that is greater than or equal to 0.`
     
-    `**``*dup2`**` is a Unix system call that creates a new file descriptor for an existing file. It is similar to the `**`dup()`**` function, but it allows the caller to specify the file descriptor number to be used for the new file descriptor.*`
+    `dup2 is a Unix system call that creates a new file descriptor for an existing file. It is similar to the `dup()`**` function, but it allows the caller to specify the file descriptor number to be used for the new file descriptor.`
     
     `*The `**`dup2()`**` function takes two arguments: the file descriptor of the existing file, and the file descriptor number to be used for the new file descriptor. It returns the new file descriptor number if successful, and -1 if an error occurs.*`
     
