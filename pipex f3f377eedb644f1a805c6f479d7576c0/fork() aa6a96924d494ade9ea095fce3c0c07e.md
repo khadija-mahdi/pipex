@@ -1,8 +1,8 @@
 # fork()
 
-`fork() : is a system call in the Unix and Unix-like operating systems that creates a new process ( the child process) from a parent process,.***`
+`fork() : is a system call in the Unix and Unix-like operating systems that creates a new process ( the child process) from a parent process,`
 
-`After a new child process is created, both processes will execute the next instruction following the fork() system call. A child process uses the same pc(program counter), same CPU registers, same open files which use in the parent process.***`
+`After a new child process is created, both processes will execute the next instruction following the fork() system call. A child process uses the same pc(program counter), same CPU registers, same open files which use in the parent process.`
 
 `( Generally fork () tries to make an exact  copy of the calling process)`
 
@@ -19,7 +19,7 @@ positive : if the child process created .
 - `The child thread returns executing at the exact same point that its parent called fork().`
     
     <aside>
-    💡 `With one exception: fork() returns **twice**, the PID of child to the parent and 0 to the child.`
+    💡 `With one exception: fork() returns twice, the PID of child to the parent and 0 to the child.`
     
     </aside>
     
