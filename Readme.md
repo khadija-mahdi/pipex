@@ -60,11 +60,11 @@
     
 - execve()
     
-    ``**`execve() is a function in the C programming language that is used to execute a new program in a process. It replaces the current process image with a new process image, and starts the new program running in the same process.`**`*`
+    **`execve() is a function in the C programming language that is used to execute a new program in a process. It replaces the current process image with a new process image, and starts the new program running in the same process.`**`*`
     
-    ``**`*The execve() function has the following prototype:`**`*`
+    **`*The execve() function has the following prototype:`**`*`
     
-    ``**`*int execve(const char *path, char *const argv[], char *const envp[]);`**`*`
+    **`*int execve(const char *path, char *const argv[], char *const envp[]);`**`*`
     
     *`The `**`path`**` argument specifies the path of the program to be executed, and the `**`argv`**` argument is an array of pointers to null-terminated strings that represent the command-line arguments to be passed to the program. The `**`envp`**` argument is an array of pointers to null-terminated strings that represent the environment variables to be passed to the program.`*
     
