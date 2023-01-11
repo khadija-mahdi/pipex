@@ -27,16 +27,16 @@
 
 - wait()
     
-    *`The **wait():**
-     function is typically used in conjunction with the **fork()**
+    *`The `**`wait():`**`
+     function is typically used in conjunction with the `**`fork()`**`
      function, which is used to create child processes. It is an important part of the process management system in Unix-like operating systems.`*
     
-    ``````````wait() is *that allows a parent process to wait for one of its child processes to terminate. When a parent process calls **wait()**, it blocks (i.e., stops execution) until one of its child processes exits, at which point **wait()** returns the child's exit status to the parent process.*`
+    ``````````wait() is *that allows a parent process to wait for one of its child processes to terminate. When a parent process calls `**`wait()`**`, it blocks (i.e., stops execution) until one of its child processes exits, at which point `**`wait()`**` returns the child's exit status to the parent process.*`
     
 - pipe
     
-    `*pipes can be created using the **pipe()** function, which is declared in the **unistd.h**
-     header file. The **pipe()** function creates a pipe and returns a pair of file descriptors that refer to the ends of the pipe. One process writes data to the pipe using the write end of the pipe (which is represented by the first file descriptor in the pair), while the other process reads data from the pipe using the read end of the pipe (which is represented by the second file descriptor in the pair).*`
+    `*pipes can be created using the `**`pipe()`**` function, which is declared in the `**`unistd.h`**`
+     header file. The `**`pipe()`**` function creates a pipe and returns a pair of file descriptors that refer to the ends of the pipe. One process writes data to the pipe using the write end of the pipe (which is represented by the first file descriptor in the pair), while the other process reads data from the pipe using the read end of the pipe (which is represented by the second file descriptor in the pair).*`
     
     `*fd[0] → write*`
     
@@ -44,13 +44,13 @@
     
 - dup /dup2
     
-    **`*dup** is a Unix system call that creates a new file descriptor for an existing file. It allows a process to create multiple references to a single file, each with a different file descriptor.*`
+    `**``*dup`**` is a Unix system call that creates a new file descriptor for an existing file. It allows a process to create multiple references to a single file, each with a different file descriptor.*`
     
-    `*The **dup()** function takes a file descriptor as an argument, and it returns a new file descriptor that refers to the same file. The new file descriptor has the lowest available file descriptor number that is greater than or equal to 0.*`
+    `*The `**`dup()`**` function takes a file descriptor as an argument, and it returns a new file descriptor that refers to the same file. The new file descriptor has the lowest available file descriptor number that is greater than or equal to 0.*`
     
-    **`*dup2** is a Unix system call that creates a new file descriptor for an existing file. It is similar to the **dup()** function, but it allows the caller to specify the file descriptor number to be used for the new file descriptor.*`
+    `**``*dup2`**` is a Unix system call that creates a new file descriptor for an existing file. It is similar to the `**`dup()`**` function, but it allows the caller to specify the file descriptor number to be used for the new file descriptor.*`
     
-    `*The **dup2()** function takes two arguments: the file descriptor of the existing file, and the file descriptor number to be used for the new file descriptor. It returns the new file descriptor number if successful, and -1 if an error occurs.*`
+    `*The `**`dup2()`**` function takes two arguments: the file descriptor of the existing file, and the file descriptor number to be used for the new file descriptor. It returns the new file descriptor number if successful, and -1 if an error occurs.*`
     
 - exit()
     
@@ -60,17 +60,17 @@
     
 - execve()
     
-    `***execve() is a function in the C programming language that is used to execute a new program in a process. It replaces the current process image with a new process image, and starts the new program running in the same process.***`
+    ``**`*execve() is a function in the C programming language that is used to execute a new program in a process. It replaces the current process image with a new process image, and starts the new program running in the same process.`**`*`
     
-    `***The execve() function has the following prototype:***`
+    ``**`*The execve() function has the following prototype:`**`*`
     
-    `***int execve(const char *path, char *const argv[], char *const envp[]);***`
+    ``**`*int execve(const char *path, char *const argv[], char *const envp[]);`**`*`
     
-    *`The **path** argument specifies the path of the program to be executed, and the **argv** argument is an array of pointers to null-terminated strings that represent the command-line arguments to be passed to the program. The **envp** argument is an array of pointers to null-terminated strings that represent the environment variables to be passed to the program.`*
+    *`The `**`path`**` argument specifies the path of the program to be executed, and the `**`argv`**` argument is an array of pointers to null-terminated strings that represent the command-line arguments to be passed to the program. The `**`envp`**` argument is an array of pointers to null-terminated strings that represent the environment variables to be passed to the program.`*
     
-    *`The **execve()** function returns -1 if an error occurs, and does not return if the program execution is successful. If the **execve()** function succeeds, it does not return to the calling process, but rather it replaces the calling process with the new process image.`*
+    *`The `**`execve()`**` function returns -1 if an error occurs, and does not return if the program execution is successful. If the `**`execve()`**` function succeeds, it does not return to the calling process, but rather it replaces the calling process with the new process image.`*
     
-    *`The **execve()** function is often used in combination with the **fork()** function to create a new process and execute a program in the child process. It can also be used to execute a program in the current process..`*
+    *`The `**`execve()`**` function is often used in combination with the `**`fork()`**` function to create a new process and execute a program in the child process. It can also be used to execute a program in the current process..`*
     
 - access
     
@@ -83,8 +83,8 @@
     - `*X_OK: Check whether the file is executable*`
     - `*F_OK: Check whether the file exists*`
 
-- [x]  ***`the case if  :  the environment path doesn’t exist !`***
+- [x]  **`the case if  :  the environment path doesn’t exist !`**
 
-- [ ]  ***`the case if : the input file doesn’t exist !`***
+- [ ]  **`the case if : the input file doesn’t exist !`**
 
-- [x]  ***`the case if  :  the environment path == /dev/random  !`***
+- [x]  **`the case if  :  the environment path == /dev/random  !`**
