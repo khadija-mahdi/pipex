@@ -1,7 +1,7 @@
 NAME = pipex
 
 SRC= ./utils/ft_printf.c ./utils/ft_printf_utils.c  ./utils/ft_split.c \
-	./utils/utils_libft.c main.c ./utils/utils_libft_one.c
+	./utils/utils_libft.c ./utils/utils_libft_one.c  main.c free_list.c
 
 OBJ= $(SRC:.c=.o)
 
