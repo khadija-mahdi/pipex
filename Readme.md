@@ -1,19 +1,19 @@
 # pipex :
 
-`***fork(), wait(), pipe(), dup2(), and execve():***`
+**`fork(), wait(), pipe(), dup2(), and execve():`**
 
-1. `***Create a pipe using the pipe() function.***`
-2. `***Create a child process using the fork() function.***`
-3. `***In the child process:***`
-    1. `***Close the write end of the pipe.***`
-    2. `***Redirect the standard input of the child process to the read end of the pipe using the dup2() function.***`
-    3. `***Close the read end of the pipe.***`
-    4. `***Execute a new program using the execve() function, passing the standard input of the child process as an argument.***`
-4. `***In the parent process:***`
-    1. `***Close the read end of the pipe.***`
-    2. `***Write data to the pipe using the write() function.***`
-    3. `***Close the write end of the pipe.***`
-    4. `***Wait for the child process to finish using the wait() function.***`
+1. **`Create a pipe using the pipe() function.`**
+2. **`Create a child process using the fork() function.`**
+3. **`In the child process:`**
+    1. **`Close the write end of the pipe.`**
+    2. **`Redirect the standard input of the child process to the read end of the pipe using the dup2() function.`**
+    3. **`Close the read end of the pipe.`**
+    4. **`Execute a new program using the execve() function, passing the standard input of the child process as an argument.`**
+4. **`In the parent process:`**
+    1. **`Close the read end of the pipe.`**
+    2. **`Write data to the pipe using the write() function.`**
+    3. **`Close the write end of the pipe.`**
+    4. **`Wait for the child process to finish using the wait() function.`**
 
 ![zom.png](pipex%20f3f377eedb644f1a805c6f479d7576c0/zom.png)
 
