@@ -27,16 +27,16 @@
 
 - wait()
     
-    *`The **wait():**
-     function is typically used in conjunction with the **fork()**
+    The wait():
+     function is typically used in conjunction with the fork()
      function, which is used to create child processes. It is an important part of the process management system in Unix-like operating systems.`*
     
     ``````````wait() is *that allows a parent process to wait for one of its child processes to terminate. When a parent process calls **wait()**, it blocks (i.e., stops execution) until one of its child processes exits, at which point **wait()** returns the child's exit status to the parent process.*`
     
 - pipe
     
-    `*pipes can be created using the **pipe()** function, which is declared in the **unistd.h**
-     header file. The **pipe()** function creates a pipe and returns a pair of file descriptors that refer to the ends of the pipe. One process writes data to the pipe using the write end of the pipe (which is represented by the first file descriptor in the pair), while the other process reads data from the pipe using the read end of the pipe (which is represented by the second file descriptor in the pair).*`
+    `*pipes can be created using the pipe() function, which is declared in the <unistd.h>
+     header file. The pipe() function creates a pipe and returns a pair of file descriptors that refer to the ends of the pipe. One process writes data to the pipe using the write end of the pipe (which is represented by the first file descriptor in the pair), while the other process reads data from the pipe using the read end of the pipe (which is represented by the second file descriptor in the pair).*`
     
     `*fd[0] → write*`
     
@@ -82,9 +82,3 @@
     - `*W_OK: Check whether the file is writable*`
     - `*X_OK: Check whether the file is executable*`
     - `*F_OK: Check whether the file exists*`
-
-- [x]  ***`the case if  :  the environment path doesn’t exist !`***
-
-- [ ]  ***`the case if : the input file doesn’t exist !`***
-
-- [x]  ***`the case if  :  the environment path == /dev/random  !`***
