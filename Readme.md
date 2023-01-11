@@ -31,7 +31,7 @@
      function is typically used in conjunction with the `**`fork()`**`
      function, which is used to create child processes. It is an important part of the process management system in Unix-like operating systems.`*
     
-    ``````````wait() is *that allows a parent process to wait for one of its child processes to terminate. When a parent process calls `**`wait()`**`, it blocks (i.e., stops execution) until one of its child processes exits, at which point `**`wait()`**` returns the child's exit status to the parent process.*`
+    `wait() is *that allows a parent process to wait for one of its child processes to terminate. When a parent process calls `**`wait()`**`, it blocks (i.e., stops execution) until one of its child processes exits, at which point `**`wait()`**` returns the child's exit status to the parent process.*`
     
 - pipe
     
