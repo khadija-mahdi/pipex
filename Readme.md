@@ -54,9 +54,9 @@
     
 - exit()
     
-    `exit() is a function in the C standard library that terminates the calling process and returns an exit status to the operating system. The exit status is an integer value that is typically used to indicate the success or failure of the process, or to provide additional information about the process' termination.*`
+    `exit() is a function in the C standard library that terminates the calling process and returns an exit status to the operating system. The exit status is an integer value that is typically used to indicate the success or failure of the process, or to provide additional information about the process' termination.`
     
-    `The exit() function takes an integer argument, which specifies the exit status to be returned to the operating system. A value of 0 typically indicates success, while a non-zero value indicates an error or failure. The exact meaning of the exit status depends on the specific implementation and conventions being used.*`
+    `The exit() function takes an integer argument, which specifies the exit status to be returned to the operating system. A value of 0 typically indicates success, while a non-zero value indicates an error or failure. The exact meaning of the exit status depends on the specific implementation and conventions being used.`
     
 - execve()
     
