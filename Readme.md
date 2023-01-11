@@ -48,15 +48,15 @@
     
     `The `**`dup()`**` function takes a file descriptor as an argument, and it returns a new file descriptor that refers to the same file. The new file descriptor has the lowest available file descriptor number that is greater than or equal to 0.`
     
-    `dup2 is a Unix system call that creates a new file descriptor for an existing file. It is similar to the `dup()`**` function, but it allows the caller to specify the file descriptor number to be used for the new file descriptor.`
+    `dup2 is a Unix system call that creates a new file descriptor for an existing file. It is similar to the `dup() function, but it allows the caller to specify the file descriptor number to be used for the new file descriptor.`
     
     `*The `**`dup2()`**` function takes two arguments: the file descriptor of the existing file, and the file descriptor number to be used for the new file descriptor. It returns the new file descriptor number if successful, and -1 if an error occurs.*`
     
 - exit()
     
-    `*exit() is a function in the C standard library that terminates the calling process and returns an exit status to the operating system. The exit status is an integer value that is typically used to indicate the success or failure of the process, or to provide additional information about the process' termination.*`
+    `exit() is a function in the C standard library that terminates the calling process and returns an exit status to the operating system. The exit status is an integer value that is typically used to indicate the success or failure of the process, or to provide additional information about the process' termination.*`
     
-    `*The exit() function takes an integer argument, which specifies the exit status to be returned to the operating system. A value of 0 typically indicates success, while a non-zero value indicates an error or failure. The exact meaning of the exit status depends on the specific implementation and conventions being used.*`
+    `The exit() function takes an integer argument, which specifies the exit status to be returned to the operating system. A value of 0 typically indicates success, while a non-zero value indicates an error or failure. The exact meaning of the exit status depends on the specific implementation and conventions being used.*`
     
 - execve()
     
