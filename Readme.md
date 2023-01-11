@@ -76,7 +76,7 @@
     
     `*the access() function is a library function that can be used to check the accessibility of a file. It checks whether the calling process can access a file by checking the file's permissions and the file's accessibility in the file system.*`
     
-    `*The access() function takes a pathname and an integer mode as arguments and returns 0 if the file is accessible and -1 if the file is not accessible. The mode argument specifies the accessibility that the calling process is requesting:*`
+    `The access() function takes a pathname and an integer mode as arguments and returns 0 if the file is accessible and -1 if the file is not accessible. The mode argument specifies the accessibility that the calling process is requesting:`
     
     - `*R_OK: Check whether the file is readable*`
     - `*W_OK: Check whether the file is writable*`
