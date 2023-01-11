@@ -78,10 +78,10 @@
     
     `The access() function takes a pathname and an integer mode as arguments and returns 0 if the file is accessible and -1 if the file is not accessible. The mode argument specifies the accessibility that the calling process is requesting:`
     
-    - `*R_OK: Check whether the file is readable*`
-    - `*W_OK: Check whether the file is writable*`
-    - `*X_OK: Check whether the file is executable*`
-    - `*F_OK: Check whether the file exists*`
+    - `R_OK: Check whether the file is readable`
+    - `W_OK: Check whether the file is writable`
+    - `X_OK: Check whether the file is executable`
+    - `F_OK: Check whether the file exists`
 
 - [x]  **`the case if  :  the environment path doesn’t exist !`**
 
