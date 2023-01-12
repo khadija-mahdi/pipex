@@ -6,7 +6,7 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:58:01 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/11 05:03:31 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/12 11:52:01 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,11 @@ void	command_one(int fd[], char **env, char **av)
 	list = ft_split(av[2], ' ');
 	program_path = aff_path(list[0], env);
 	if (input == -1)
-	{
-		ft_printf("no such file or directory: %s \n", av[1]);
-		exit(1);
-	}
+		exit_msg("input fd error ! \n", 1);
 	if (program_path == NULL)
-	{
-		perror("Error: no such file or directory");
-		exit(EXIT_FAILURE);
-	}
+		exit_msg("No such file or directory \n", 1);
 	if (dup2(input, 0) < 0 || (dup2(fd[1], 1) < 0))
-	{
-		perror("dup error !");
-		exit(2);
-	}
+		exit_msg("Dup error cmd1! \n", 1);
 	execve(program_path, list, env);
 }
 
@@ -90,18 +81,14 @@ void	command_two(int fd[], char **env, char **av)
 
 	list1 = ft_split(av[3], ' ');
 	output = open(av[4], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	if (output == -1)
+		exit_msg("input fd error ! \n", 1);
 	program_path = aff_path(list1[0], env);
 	if (program_path == NULL)
-	{
-		perror("Error: no such file or directory");
-		exit(EXIT_FAILURE);
-	}
+		exit_msg("No such file or directory \n", 1);
 	close(fd[1]);
 	if (dup2(output, 1) < 0 || dup2(fd[0], 0) < 0)
-	{
-		perror("err :");
-		exit(2);
-	}
+		exit_msg("Dup error cmd2! \n", 1);
 	execve(program_path, list1, env);
 }
 
@@ -112,16 +99,14 @@ int	main(int ac, char **av, char **env)
 
 	if (ac == 5)
 	{
+		if (av[4][0] == '\0')
+			exit_msg("command not found", 1);
+		if (av[3][0] == '\0')
+			exit_msg("command not found", 1);
 		if (fd < 0)
-		{
-			perror("open");
-			return (1);
-		}
+			exit_msg("fd error ! \n", 1);
 		if (pipe(fd) == -1)
-		{
-			ft_printf("ERROR : \n opening the pipe failed !! \n");
-			exit(EXIT_FAILURE);
-		}
+			exit_msg("pipe error ! \n", 1);
 		pid = fork();
 		if (pid == 0)
 			command_one(fd, env, av);
@@ -129,5 +114,5 @@ int	main(int ac, char **av, char **env)
 			command_two(fd, env, av);
 		waitpid(pid, NULL, 0);
 	}
-	return (0);
+	exit_msg("wrong args! \n", 0);
 }
