@@ -6,7 +6,7 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:37:16 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/12 11:57:46 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/13 21:12:03 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	*m_strjoin(char *s1, char *s2);
 void	free_list(char **list);
 void	exit_msg(char *msg, int i);
+void	error_handling(char **av);
 #endif

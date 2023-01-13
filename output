@@ -1,0 +1,17 @@
+total 120
+drwxr-xr-x  16 kmahdi  2019    544 Jan 13 20:56 .
+drwx------  11 kmahdi  2019    374 Jan 12 18:05 ..
+drwxr-xr-x  12 kmahdi  2019    408 Jan 12 18:05 .git
+-rw-r--r--   1 kmahdi  2019    431 Jan 12 18:05 Makefile
+-rwxr-xr-x   1 kmahdi  2019   6069 Jan 12 18:05 Readme.md
+-rw-r--r--   1 kmahdi  2019   1080 Jan 12 18:05 free_list.c
+-rw-r--r--   1 kmahdi  2019   1048 Jan 12 18:09 free_list.o
+-rw-r--r--   1 kmahdi  2019   3367 Jan 13 20:56 main.c
+-rw-r--r--   1 kmahdi  2019   3464 Jan 13 20:56 main.o
+-rw-r--r--   1 kmahdi  2019    128 Jan 13 19:35 out
+-rw-r--r--   1 kmahdi  2019      9 Jan 13 20:48 outfile
+-rw-r--r--   1 kmahdi  2019      0 Jan 13 20:56 output
+-rwxr-xr-x   1 kmahdi  2019  18524 Jan 13 20:56 pipex
+drwxr-xr-x   7 kmahdi  2019    238 Jan 12 18:05 pipex f3f377eedb644f1a805c6f479d7576c0
+-rw-r--r--   1 kmahdi  2019   1895 Jan 12 18:05 pipex.h
+drwxr-xr-x  13 kmahdi  2019    442 Jan 12 18:09 utils

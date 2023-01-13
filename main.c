@@ -6,10 +6,11 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:58:01 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/12 11:52:01 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/13 21:11:35 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<string.h>
 #include "pipex.h"
 
 void	path(char *paths, char **full_path, char *av)
@@ -60,7 +61,6 @@ void	command_one(int fd[], char **env, char **av)
 	char	**list;
 	char	*program_path;
 
-	close(fd[0]);
 	input = open(av[1], O_RDONLY);
 	list = ft_split(av[2], ' ');
 	program_path = aff_path(list[0], env);
@@ -86,33 +86,53 @@ void	command_two(int fd[], char **env, char **av)
 	program_path = aff_path(list1[0], env);
 	if (program_path == NULL)
 		exit_msg("No such file or directory \n", 1);
-	close(fd[1]);
 	if (dup2(output, 1) < 0 || dup2(fd[0], 0) < 0)
 		exit_msg("Dup error cmd2! \n", 1);
 	execve(program_path, list1, env);
 }
 
+void	error_handling(char **av)
+{
+	if (av[2][0] == '\0' && av[3][0] == '\0' )
+	{	
+		ft_printf("command not found\n");
+		exit_msg("command not found", 1);
+	}
+	if (av[2][0] == '\0' || av[3][0] == '\0')
+		exit_msg("command not found", 1);
+}
+
 int	main(int ac, char **av, char **env)
 {
 	int	pid;
+	int	pid2;
 	int	fd[2];
 
+	pid = 0;
+	pid2 = 0;
 	if (ac == 5)
 	{
-		if (av[4][0] == '\0')
-			exit_msg("command not found", 1);
-		if (av[3][0] == '\0')
-			exit_msg("command not found", 1);
-		if (fd < 0)
-			exit_msg("fd error ! \n", 1);
+		error_handling(av);
 		if (pipe(fd) == -1)
 			exit_msg("pipe error ! \n", 1);
 		pid = fork();
 		if (pid == 0)
+		{
+			close(fd[0]);
 			command_one(fd, env, av);
+		}
 		else
-			command_two(fd, env, av);
+		{
+			close(fd[1]);
+			pid2 = fork();
+			if (pid2 == 0)
+			{
+				command_two(fd, env, av);
+			}
+		}
 		waitpid(pid, NULL, 0);
+		waitpid(pid2, NULL, 0);
 	}
-	exit_msg("wrong args! \n", 0);
+	else
+		exit_msg("wrong args! \n", 1);
 }
