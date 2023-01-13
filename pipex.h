@@ -6,7 +6,7 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:37:16 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/13 21:12:03 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/13 22:33:36 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,6 @@ char	*m_strjoin(char *s1, char *s2);
 void	free_list(char **list);
 void	exit_msg(char *msg, int i);
 void	error_handling(char **av);
+void	piping(int fd[2], int pid2, char **env, char **av);
+void	command_two(int fd[], char **env, char **av);
 #endif

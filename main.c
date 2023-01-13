@@ -6,12 +6,12 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:58:01 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/13 21:11:35 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/13 22:37:27 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
 #include "pipex.h"
+#include "main.h"
 
 void	path(char *paths, char **full_path, char *av)
 {
@@ -91,17 +91,6 @@ void	command_two(int fd[], char **env, char **av)
 	execve(program_path, list1, env);
 }
 
-void	error_handling(char **av)
-{
-	if (av[2][0] == '\0' && av[3][0] == '\0' )
-	{	
-		ft_printf("command not found\n");
-		exit_msg("command not found", 1);
-	}
-	if (av[2][0] == '\0' || av[3][0] == '\0')
-		exit_msg("command not found", 1);
-}
-
 int	main(int ac, char **av, char **env)
 {
 	int	pid;
@@ -122,14 +111,7 @@ int	main(int ac, char **av, char **env)
 			command_one(fd, env, av);
 		}
 		else
-		{
-			close(fd[1]);
-			pid2 = fork();
-			if (pid2 == 0)
-			{
-				command_two(fd, env, av);
-			}
-		}
+			piping(fd, pid2, env, av);
 		waitpid(pid, NULL, 0);
 		waitpid(pid2, NULL, 0);
 	}
