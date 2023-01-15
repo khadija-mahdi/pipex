@@ -6,12 +6,11 @@
 /*   By: kmahdi <kmahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:58:01 by kmahdi            #+#    #+#             */
-/*   Updated: 2023/01/13 22:37:27 by kmahdi           ###   ########.fr       */
+/*   Updated: 2023/01/13 23:22:32 by kmahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-#include "main.h"
 
 void	path(char *paths, char **full_path, char *av)
 {
